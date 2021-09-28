@@ -7,7 +7,7 @@
     <div id="cover-spin"></div>
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
-      @include('partials.header.header')
+      @include('partials.header.header')  
       
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
