@@ -1,0 +1,4902 @@
+define({ "api": [
+  {
+    "type": "get",
+    "url": "getBanners",
+    "title": "Banner",
+    "name": "getBanners",
+    "version": "1.0.0",
+    "group": "Banners",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/getBanners"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"id\":1,\n  \"title\": \"register\",\n  \"description\": \"register\",\n  \"banner_image\": \"banner/test.jpg\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/LabelsController.php",
+    "groupTitle": "Banners"
+  },
+  {
+    "type": "post",
+    "url": "getsubcategory",
+    "title": "Sub Category",
+    "name": "getsubcategory",
+    "version": "1.0.0",
+    "group": "Category",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "category_id",
+            "description": "<p>category id.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer autherization token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/getsubcategory"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\": \"success\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/VehicleController.php",
+    "groupTitle": "Category"
+  },
+  {
+    "type": "post",
+    "url": "dashboard",
+    "title": "User Dashboard",
+    "name": "dashboard",
+    "version": "1.0.0",
+    "group": "Dashboard",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer autherization token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/dashboard"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\": \"success\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/VehicleController.php",
+    "groupTitle": "Dashboard"
+  },
+  {
+    "type": "post",
+    "url": "insuranceaddcardetails",
+    "title": "Add car details for insurance",
+    "name": "insuranceaddcardetails",
+    "version": "1.0.0",
+    "group": "Insurance",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "guest_id",
+            "description": "<p>users guest_id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "service_id",
+            "description": "<p>Existing service id (regarding service id) .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "insurance_start_date",
+            "description": "<p>Enter insurance start date .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "mobile_number",
+            "description": "<p>users  mobile number</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "insurance_type",
+            "description": "<p>Insurance type (new or old).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "civil_id_front",
+            "description": "<p>Civil id like image should be uploads (front side)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "civil_id_back",
+            "description": "<p>Civil id like image should be uploads (back side)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "car_registration_number",
+            "description": "<p>Car registration number</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "chassis_number",
+            "description": "<p>Car chassis number (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Descption regarding car damage or not(optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "current_car_estimation_value",
+            "description": "<p>Car current extimation values (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "is_agree",
+            "description": "<p>Is Agree should be 1 or 0 values</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "image",
+            "description": "<p>Image should be commo seperated string</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/insuranceaddcardetails"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\n        \"status\": 1,\n        \"message\": \"Success\",\n        \"service_payment\":{\n        \"id\":1,\n        \"name\":\"test\",\n        \"amount\":\"200\",\n        \"wallet_amount\":\"560\",\n        \"insurance_car_id\":\"1\",\n        \"user_vehicle_id\":\"3\"\n        }\n\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/CopyInsuranceController.php",
+    "groupTitle": "Insurance"
+  },
+  {
+    "type": "post",
+    "url": "insuranceaddcardetails",
+    "title": "Add car details for insurance",
+    "name": "insuranceaddcardetails",
+    "version": "1.0.0",
+    "group": "Insurance",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "guest_id",
+            "description": "<p>users guest_id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "service_id",
+            "description": "<p>Existing service id (regarding service id) .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "insurance_start_date",
+            "description": "<p>Enter insurance start date .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "mobile_number",
+            "description": "<p>users  mobile number</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "insurance_type",
+            "description": "<p>Insurance type (new or old).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "civil_id_front",
+            "description": "<p>Civil id like image should be uploads (front side)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "civil_id_back",
+            "description": "<p>Civil id like image should be uploads (back side)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "car_registration_number",
+            "description": "<p>Car registration number</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "chassis_number",
+            "description": "<p>Car chassis number (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Descption regarding car damage or not(optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "current_car_estimation_value",
+            "description": "<p>Car current extimation values (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "is_agree",
+            "description": "<p>Is Agree should be 1 or 0 values</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "image",
+            "description": "<p>Image should be commo seperated string</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/insuranceaddcardetails"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\n        \"status\": 1,\n        \"message\": \"Success\",\n        \"service_payment\":{\n        \"id\":1,\n        \"name\":\"test\",\n        \"amount\":\"200\",\n        \"wallet_amount\":\"560\",\n        \"insurance_car_id\":\"1\",\n        \"user_vehicle_id\":\"3\"\n        }\n\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/CopyAnilInsuranceController.php",
+    "groupTitle": "Insurance"
+  },
+  {
+    "type": "post",
+    "url": "insuranceaddcardetails",
+    "title": "Add car details for insurance",
+    "name": "insuranceaddcardetails",
+    "version": "1.0.0",
+    "group": "Insurance",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "guest_id",
+            "description": "<p>users guest_id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "service_id",
+            "description": "<p>Existing service id (regarding service id) .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "insurance_start_date",
+            "description": "<p>Enter insurance start date .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "mobile_number",
+            "description": "<p>users  mobile number</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "insurance_type",
+            "description": "<p>Insurance type (new or old).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "civil_id_front",
+            "description": "<p>Civil id like image should be uploads (front side)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "civil_id_back",
+            "description": "<p>Civil id like image should be uploads (back side)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "car_registration_number",
+            "description": "<p>Car registration number</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "chassis_number",
+            "description": "<p>Car chassis number (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Descption regarding car damage or not(optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "current_car_estimation_value",
+            "description": "<p>Car current extimation values (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "is_agree",
+            "description": "<p>Is Agree should be 1 or 0 values</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "image",
+            "description": "<p>Image should be commo seperated string</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/insuranceaddcardetails"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\n        \"status\": 1,\n        \"message\": \"Success\",\n        \"service_payment\":{\n        \"id\":1,\n        \"name\":\"test\",\n        \"amount\":\"200\",\n        \"wallet_amount\":\"560\",\n        \"insurance_car_id\":\"1\",\n        \"user_vehicle_id\":\"3\"\n        }\n\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/InsuranceController.php",
+    "groupTitle": "Insurance"
+  },
+  {
+    "type": "post",
+    "url": "insuranceserviceprovider",
+    "title": "Isurance service provider",
+    "name": "insuranceserviceprovider",
+    "version": "1.0.0",
+    "group": "Insurance",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "offset",
+            "description": "<p>offset for pagination.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>limit used for how many record get at time.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "category_id",
+            "description": "<p>category id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "brand_id",
+            "description": "<p>Branc id .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "model_id",
+            "description": "<p>Model id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "registration_number",
+            "description": "<p>Registration number.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "my_vehicle_id",
+            "description": "<p>existing vehicle id (optional if user add new vehicles).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "vehicle_type",
+            "description": "<p>vehicle type id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "manufacture",
+            "description": "<p>year of manufacture.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "service_type",
+            "description": "<p>service type used for full party and third party(0=full party and 1=third party).</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/insuranceserviceprovider"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  {\n         \"status\": 1,\n         \"message\": \"success\",\n         \"service_providers\": [\n             {\n                 \"id\": 2,\n                 \"full_name\": \"backend developer\",\n                 \"profile_pic\": \"abc.jpg\",\n                 \"rating\": 2.5,\n                 \"reviews\": 2,\n                 \"starting_price\": \"10.000\",\n                 \"minimum_service_time\": \"10\"\n             },\n             {\n                 \"id\": 1,\n                 \"full_name\": \"anil chauhan\",\n                 \"profile_pic\": \"\",\n                 \"rating\": 4.5,\n                 \"reviews\": 2,\n                 \"starting_price\": \"1110.000\",\n                 \"minimum_service_time\": \"20\"\n             },\n\n         ]\n     }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/CopyInsuranceController.php",
+    "groupTitle": "Insurance"
+  },
+  {
+    "type": "post",
+    "url": "insuranceserviceprovider",
+    "title": "Isurance service provider",
+    "name": "insuranceserviceprovider",
+    "version": "1.0.0",
+    "group": "Insurance",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "offset",
+            "description": "<p>offset for pagination.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>limit used for how many record get at time.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "category_id",
+            "description": "<p>category id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "brand_id",
+            "description": "<p>Branc id .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "model_id",
+            "description": "<p>Model id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "registration_number",
+            "description": "<p>Registration number.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "my_vehicle_id",
+            "description": "<p>existing vehicle id (optional if user add new vehicles).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "vehicle_type",
+            "description": "<p>vehicle type id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "manufacture",
+            "description": "<p>year of manufacture.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "service_type",
+            "description": "<p>service type used for full party and third party(0=full party and 1=third party).</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/insuranceserviceprovider"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  {\n         \"status\": 1,\n         \"message\": \"success\",\n         \"service_providers\": [\n             {\n                 \"id\": 2,\n                 \"full_name\": \"backend developer\",\n                 \"profile_pic\": \"abc.jpg\",\n                 \"rating\": 2.5,\n                 \"reviews\": 2,\n                 \"starting_price\": \"10.000\",\n                 \"minimum_service_time\": \"10\"\n             },\n             {\n                 \"id\": 1,\n                 \"full_name\": \"anil chauhan\",\n                 \"profile_pic\": \"\",\n                 \"rating\": 4.5,\n                 \"reviews\": 2,\n                 \"starting_price\": \"1110.000\",\n                 \"minimum_service_time\": \"20\"\n             },\n\n         ]\n     }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/InsuranceController.php",
+    "groupTitle": "Insurance"
+  },
+  {
+    "type": "post",
+    "url": "insuranceserviceprovider",
+    "title": "Isurance service provider",
+    "name": "insuranceserviceprovider",
+    "version": "1.0.0",
+    "group": "Insurance",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "offset",
+            "description": "<p>offset for pagination.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>limit used for how many record get at time.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "category_id",
+            "description": "<p>category id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "brand_id",
+            "description": "<p>Branc id .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "model_id",
+            "description": "<p>Model id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "registration_number",
+            "description": "<p>Registration number.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "my_vehicle_id",
+            "description": "<p>existing vehicle id (optional if user add new vehicles).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "vehicle_type",
+            "description": "<p>vehicle type id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "manufacture",
+            "description": "<p>year of manufacture.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "service_type",
+            "description": "<p>service type used for full party and third party(0=full party and 1=third party).</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/insuranceserviceprovider"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  {\n         \"status\": 1,\n         \"message\": \"success\",\n         \"service_providers\": [\n             {\n                 \"id\": 2,\n                 \"full_name\": \"backend developer\",\n                 \"profile_pic\": \"abc.jpg\",\n                 \"rating\": 2.5,\n                 \"reviews\": 2,\n                 \"starting_price\": \"10.000\",\n                 \"minimum_service_time\": \"10\"\n             },\n             {\n                 \"id\": 1,\n                 \"full_name\": \"anil chauhan\",\n                 \"profile_pic\": \"\",\n                 \"rating\": 4.5,\n                 \"reviews\": 2,\n                 \"starting_price\": \"1110.000\",\n                 \"minimum_service_time\": \"20\"\n             },\n\n         ]\n     }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/CopyAnilInsuranceController.php",
+    "groupTitle": "Insurance"
+  },
+  {
+    "type": "post",
+    "url": "insurancetypewithcms",
+    "title": "Insurance type and privacy policy records",
+    "name": "insurancetypewithcms",
+    "version": "1.0.0",
+    "group": "Insurance",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "service_provider_id",
+            "description": "<p>Service providers unique id for privacy policy.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/insurancetypewithcms"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\n        \"status\": 1,\n        \"message\": \"success\",\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/CopyAnilInsuranceController.php",
+    "groupTitle": "Insurance"
+  },
+  {
+    "type": "post",
+    "url": "insurancetypewithcms",
+    "title": "Insurance type and privacy policy records",
+    "name": "insurancetypewithcms",
+    "version": "1.0.0",
+    "group": "Insurance",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "service_provider_id",
+            "description": "<p>Service providers unique id for privacy policy.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/insurancetypewithcms"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\n        \"status\": 1,\n        \"message\": \"success\",\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/CopyInsuranceController.php",
+    "groupTitle": "Insurance"
+  },
+  {
+    "type": "post",
+    "url": "insurancetypewithcms",
+    "title": "Insurance type and privacy policy records",
+    "name": "insurancetypewithcms",
+    "version": "1.0.0",
+    "group": "Insurance",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "service_provider_id",
+            "description": "<p>Service providers unique id for privacy policy.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/insurancetypewithcms"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\n        \"status\": 1,\n        \"message\": \"success\",\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/InsuranceController.php",
+    "groupTitle": "Insurance"
+  },
+  {
+    "type": "post",
+    "url": "insurancevehicledetails",
+    "title": "Insurance and User Vehicle details and vehicle type",
+    "name": "insurancevehicledetails",
+    "version": "1.0.0",
+    "group": "Insurance",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/insurancevehicledetails"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\n        \"status\": 1,\n        \"message\": \"success\",\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/InsuranceController.php",
+    "groupTitle": "Insurance"
+  },
+  {
+    "type": "post",
+    "url": "insurancevehicledetails",
+    "title": "Insurance and User Vehicle details and vehicle type",
+    "name": "insurancevehicledetails",
+    "version": "1.0.0",
+    "group": "Insurance",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/insurancevehicledetails"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\n        \"status\": 1,\n        \"message\": \"success\",\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/CopyAnilInsuranceController.php",
+    "groupTitle": "Insurance"
+  },
+  {
+    "type": "post",
+    "url": "insurancevehicledetails",
+    "title": "Insurance and User Vehicle details and vehicle type",
+    "name": "insurancevehicledetails",
+    "version": "1.0.0",
+    "group": "Insurance",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/insurancevehicledetails"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\n        \"status\": 1,\n        \"message\": \"success\",\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/CopyInsuranceController.php",
+    "groupTitle": "Insurance"
+  },
+  {
+    "type": "post",
+    "url": "makepayment",
+    "title": "USer make payment via wallet or credit or debit card or both",
+    "name": "makepayment",
+    "version": "1.0.0",
+    "group": "Insurance",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "service_id",
+            "description": "<p>Existing service id (regarding service id) .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "insurance_car_id",
+            "description": "<p>Insurance car id .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_vehicle_id",
+            "description": "<p>User vehicle details id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "wallet_amount",
+            "description": "<p>Wallet amount (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "sub_amount",
+            "description": "<p>Sub amount should be commo seperate beacuse multiple service if used used</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "total_amount",
+            "description": "<p>Total amound is a final amount (if user used wallet only then no need to final amount)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "coupon_code",
+            "description": "<p>Coupon code number is optional</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "coupon_amount",
+            "description": "<p>Coupon amount is optional</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "payment_type",
+            "description": "<p>(payment_type '1 for wallet,2=credit card or debit card,3=wallet and card')</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "type",
+            "description": "<p>(type '1 for insurance,2 or 3=notrmal service or emergency')</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "addons_id",
+            "description": "<p>addons id should be commo seperated because addons can be multples</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "addons_amount",
+            "description": "<p>Addons amount should be commo seperate beacuse multiple addons if used used</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/makepayment"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n        \"status\": 1,\n        \"message\": \"Payment has been completed successfully\",\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/InsuranceController.php",
+    "groupTitle": "Insurance"
+  },
+  {
+    "type": "post",
+    "url": "makepayment",
+    "title": "USer make payment via wallet or credit or debit card or both",
+    "name": "makepayment",
+    "version": "1.0.0",
+    "group": "Insurance",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "service_id",
+            "description": "<p>Existing service id (regarding service id) .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "insurance_car_id",
+            "description": "<p>Insurance car id .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_vehicle_id",
+            "description": "<p>User vehicle details id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "wallet_amount",
+            "description": "<p>Wallet amount (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "sub_amount",
+            "description": "<p>Sub amount should be commo seperate beacuse multiple service if used used</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "total_amount",
+            "description": "<p>Total amound is a final amount (if user used wallet only then no need to final amount)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "coupon_code",
+            "description": "<p>Coupon code number is optional</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "coupon_amount",
+            "description": "<p>Coupon amount is optional</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "payment_type",
+            "description": "<p>(payment_type '1 for wallet,2=credit card or debit card,3=wallet and card')</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/makepayment"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n        \"status\": 1,\n        \"message\": \"Payment has been completed successfully\",\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/CopyAnilInsuranceController.php",
+    "groupTitle": "Insurance"
+  },
+  {
+    "type": "post",
+    "url": "makepayment",
+    "title": "USer make payment via wallet or credit or debit card or both",
+    "name": "makepayment",
+    "version": "1.0.0",
+    "group": "Insurance",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "service_id",
+            "description": "<p>Existing service id (regarding service id) .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "insurance_car_id",
+            "description": "<p>Insurance car id .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_vehicle_id",
+            "description": "<p>User vehicle details id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "wallet_amount",
+            "description": "<p>Wallet amount (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "sub_amount",
+            "description": "<p>Sub amount should be commo seperate beacuse multiple service if used used</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "total_amount",
+            "description": "<p>Total amound is a final amount (if user used wallet only then no need to final amount)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "coupon_code",
+            "description": "<p>Coupon code number is optional</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "coupon_amount",
+            "description": "<p>Coupon amount is optional</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "payment_type",
+            "description": "<p>(payment_type '1 for wallet,2=credit card or debit card,3=wallet and card')</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "type",
+            "description": "<p>(type '1 for insurance,2 or 3=notrmal service or emergency')</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "addons_id",
+            "description": "<p>addons id should be commo seperated because addons can be multples</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "addons_amount",
+            "description": "<p>Addons amount should be commo seperate beacuse multiple addons if used used</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/makepayment"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n        \"status\": 1,\n        \"message\": \"Payment has been completed successfully\",\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/CopyInsuranceController.php",
+    "groupTitle": "Insurance"
+  },
+  {
+    "type": "post",
+    "url": "providerdetails",
+    "title": "Service provider details",
+    "name": "providerdetails",
+    "version": "1.0.0",
+    "group": "Insurance",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id (This id is used to for get service provider).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "service_type",
+            "description": "<p>service type key is used to get full party and third party service (1 for full party and 2 for third party).</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/providerdetails"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n    {\n   \"status\": 1,\n   \"message\": \"success\",\n   \"service\": {\n       \"id\": 1,\n       \"full_name\": \"anil chauhan\",\n       \"profile_pic\": \"\",\n       \"about\": \"\",\n       \"rating\": 4.5,\n       \"reviews\": 2,\n       \"services\": [\n           {\n               \"id\": 1,\n               \"name\": \"tastdft\",\n               \"amount\": \"1110.000\",\n               \"description\": {\n                   \"0\": \"test by developer\",\n                   \"1\": \"test by developer\",\n                   \"2\": \"test by developer\"\n               },\n               \"addons\": [\n                   {\n                       \"id\": 1,\n                       \"name\": \"test1\",\n                       \"description\": \"asdfsad\",\n                       \"amount\": \"20.000\"\n                   }\n               ]\n           },\n           {\n               \"id\": 5,\n               \"name\": \"tastdft\",\n               \"amount\": \"1110.000\",\n               \"description\": {},\n               \"addons\": []\n           }\n       ]\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/CopyInsuranceController.php",
+    "groupTitle": "Insurance"
+  },
+  {
+    "type": "post",
+    "url": "providerdetails",
+    "title": "Service provider details",
+    "name": "providerdetails",
+    "version": "1.0.0",
+    "group": "Insurance",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/providerdetails"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n    {\n   \"status\": 1,\n   \"message\": \"success\",\n   \"service\": {\n       \"id\": 1,\n       \"full_name\": \"anil chauhan\",\n       \"profile_pic\": \"\",\n       \"about\": \"\",\n       \"rating\": 4.5,\n       \"reviews\": 2,\n       \"services\": [\n           {\n               \"id\": 1,\n               \"name\": \"tastdft\",\n               \"amount\": \"1110.000\",\n               \"description\": {\n                   \"0\": \"test by developer\",\n                   \"1\": \"test by developer\",\n                   \"2\": \"test by developer\"\n               },\n               \"addons\": [\n                   {\n                       \"id\": 1,\n                       \"name\": \"test1\",\n                       \"description\": \"asdfsad\",\n                       \"amount\": \"20.000\"\n                   }\n               ]\n           },\n           {\n               \"id\": 5,\n               \"name\": \"tastdft\",\n               \"amount\": \"1110.000\",\n               \"description\": {},\n               \"addons\": []\n           }\n       ]\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/CopyAnilInsuranceController.php",
+    "groupTitle": "Insurance"
+  },
+  {
+    "type": "post",
+    "url": "providerdetails",
+    "title": "Service provider details",
+    "name": "providerdetails",
+    "version": "1.0.0",
+    "group": "Insurance",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id (This id is used to for get service provider).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "service_type",
+            "description": "<p>service type key is used to get full party and third party service (1 for full party and 2 for third party).</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/providerdetails"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n    {\n   \"status\": 1,\n   \"message\": \"success\",\n   \"service\": {\n       \"id\": 1,\n       \"full_name\": \"anil chauhan\",\n       \"profile_pic\": \"\",\n       \"about\": \"\",\n       \"rating\": 4.5,\n       \"reviews\": 2,\n       \"services\": [\n           {\n               \"id\": 1,\n               \"name\": \"tastdft\",\n               \"amount\": \"1110.000\",\n               \"description\": {\n                   \"0\": \"test by developer\",\n                   \"1\": \"test by developer\",\n                   \"2\": \"test by developer\"\n               },\n               \"addons\": [\n                   {\n                       \"id\": 1,\n                       \"name\": \"test1\",\n                       \"description\": \"asdfsad\",\n                       \"amount\": \"20.000\"\n                   }\n               ]\n           },\n           {\n               \"id\": 5,\n               \"name\": \"tastdft\",\n               \"amount\": \"1110.000\",\n               \"description\": {},\n               \"addons\": []\n           }\n       ]\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/InsuranceController.php",
+    "groupTitle": "Insurance"
+  },
+  {
+    "type": "get",
+    "url": "getLanguage",
+    "title": "Label Language",
+    "name": "getLanguage",
+    "version": "1.0.0",
+    "group": "Labels",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/getLanguage"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"id\":1,\n  \"label_key\": \"register\",\n  \"name\": \"register\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/LabelsController.php",
+    "groupTitle": "Labels"
+  },
+  {
+    "type": "get",
+    "url": "getLanguagefortechnician",
+    "title": "Label Language for technician",
+    "name": "getLanguagefortechnician",
+    "version": "1.0.0",
+    "group": "Labels",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/getLanguagefortechnician"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"id\":1,\n  \"register\": \"Registration \"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/LabelsController.php",
+    "groupTitle": "Labels"
+  },
+  {
+    "type": "get",
+    "url": "addressType",
+    "title": "Addrss type",
+    "name": "addressType",
+    "version": "1.0.0",
+    "group": "Location",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/addressType"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n      \"status\": 1,\n  \"message\": \"success\",\n    \"address_data\": {\n        \"home\": {\n            \"address_type\": 0,\n            \"block\": {\n                \"is_required\": 1,\n                \"block\": \"block\"\n            },\n            \"street\": {\n                \"is_required\": 1,\n                \"street\": \"street\"\n            },\n            \"avenue\": {\n                \"is_required\": 0,\n                \"avenue\": \"avenue\"\n            },\n            \"house\": {\n                \"is_required\": 1,\n                \"house\": \"house\"\n            },\n            \"additional_direction\": {\n                \"is_required\": 0,\n                \"additional_direction\": \"additional_direction\"\n            },\n            \"country_code\": {\n                \"is_required\": 1,\n                \"country_code\": \"country_code\"\n            },\n            \"mobile_number\": {\n                \"is_required\": 1,\n                \"mobile_number\": \"mobile_number\"\n            },\n            \"landline_number\": {\n                \"is_required\": 0,\n                \"landline_number\": \"landline_number\"\n            }\n        },\n        \"office\": {\n            \"address_type\": 1,\n            \"block\": {\n                \"is_required\": 1,\n                \"block\": \"block\"\n            },\n            \"street\": {\n                \"is_required\": 1,\n                \"street\": \"street\"\n            },\n            \"avenue\": {\n                \"is_required\": 0,\n                \"avenue\": \"avenue\"\n            },\n            \"building\": {\n                \"is_required\": 1,\n            },\n                                \"building\": \"building\"\n            \"floor\": {\n                \"is_required\": 1,\n                \"floor\": \"floor\"\n            },\n            \"office\": {\n                \"is_required\": 1,\n                \"office\": \"office\"\n            },\n            \"mobile_number\": {\n                \"is_required\": 1,\n                \"mobile_number\": \"mobile_number\"\n            },\n            \"landline_number\": {\n                \"is_required\": 0,\n                \"landline_number\": \"landline_number\"\n            }\n        },\n        \"appartment\": {\n            \"appartment\": 2,\n                \"block\": {\n                \"is_required\": 1,\n                \"block\": \"block\"\n            },\n            \"street\": {\n                \"is_required\": 1,\n                \"street\": \"street\"\n            },\n            \"avenue\": {\n                \"is_required\": 0,\n                \"avenue\": \"avenue\"\n            },\n            \"building\": {\n                \"is_required\": 1,\n                \"building\": \"building\"\n            },\n            \"floor\": {\n                \"is_required\": 1,\n                \"floor\": \"floor\"\n            },\n            \"house\": {\n                \"is_required\": 1,\n                \"house\": \"house\"\n            },\n            \"appartment_number\": {\n                \"is_required\": 1,\n                \"appartment_number\": \"appartment_number\"\n            },\n            \"country_code\": {\n                \"is_required\": 1,\n                \"country_code\": \"country_code\"\n            },\n            \"mobile_number\": {\n                \"is_required\": 1,\n                \"mobile_number\": \"mobile_number\"\n            },\n            \"landline_number\": {\n                \"is_required\": 0,\n                \"landline_number\": \"landline_number\"\n            }\n        }\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/LabelsController.php",
+    "groupTitle": "Location"
+  },
+  {
+    "type": "get",
+    "url": "getareas",
+    "title": "Area Listing",
+    "name": "getareas",
+    "version": "1.0.0",
+    "group": "Location",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/getareas"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n  \"status\": 1,\n  \"message\": \"success\",\n  \"area_list\": [\n    {\n      \"id\": 1,\n      \"name\": \"Kuwait City\"\n    },\n    {\n    \"id\": 2,\n    \"name\": \"Dasmān\"\n    },\n      ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/LabelsController.php",
+    "groupTitle": "Location"
+  },
+  {
+    "type": "get",
+    "url": "ourparterns",
+    "title": "Our Partner List",
+    "name": "ourparterns",
+    "version": "1.0.0",
+    "group": "Our_Partner",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/ourparterns"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\": \"success\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/UserController.php",
+    "groupTitle": "Our_Partner"
+  },
+  {
+    "type": "post",
+    "url": "getServiceProviders",
+    "title": "Service Providers List",
+    "name": "getServiceProviders",
+    "version": "1.0.0",
+    "group": "Service_Providers",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "offset",
+            "description": "<p>offset for pagination.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>limit used for how many record get at time.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "keyword",
+            "description": "<p>Find the service Providers via email or name.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>date should be string values (Y-m-d format).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "time",
+            "description": "<p>time should be string values.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "location",
+            "description": "<p>Location should be string values .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "vehicle_type",
+            "description": "<p>vehicle type should be numeric values .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "model_id",
+            "description": "<p>model_id type should be numeric values .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "brand_id",
+            "description": "<p>brand_id type should be numeric values .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "registration_number",
+            "description": "<p>registration_number  should be string values .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "manufacture",
+            "description": "<p>manufacture should be string values .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "filter",
+            "description": "<p>filter should be string values (like 1,2 3 ,4 ).</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/getServiceProviders"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\": \"success\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/ServiceprovidersControllerCopy.php",
+    "groupTitle": "Service_Providers"
+  },
+  {
+    "type": "post",
+    "url": "getServiceProviders",
+    "title": "Service Providers List",
+    "name": "getServiceProviders",
+    "version": "1.0.0",
+    "group": "Service_Providers",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "offset",
+            "description": "<p>offset for pagination.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>limit used for how many record get at time.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "keyword",
+            "description": "<p>Find the service Providers via email or name.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>date should be string values (Y-m-d format).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "time",
+            "description": "<p>time should be string values.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "location",
+            "description": "<p>Location should be string values .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "vehicle_type",
+            "description": "<p>vehicle type should be numeric values .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "model_id",
+            "description": "<p>model_id type should be numeric values .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "brand_id",
+            "description": "<p>brand_id type should be numeric values .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "registration_number",
+            "description": "<p>registration_number  should be string values .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "manufacture",
+            "description": "<p>manufacture should be string values .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "filter",
+            "description": "<p>filter should be string values (like 1,2 3 ,4 ).</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/getServiceProviders"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\": \"success\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/ServiceprovidersController.php",
+    "groupTitle": "Service_Providers"
+  },
+  {
+    "type": "post",
+    "url": "getsubcategoryservices",
+    "title": "Sub category wise get services",
+    "name": "getsubcategoryservices",
+    "version": "1.0.0",
+    "group": "Service_Providers",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users should be unique id (login user id).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "service_provider_id",
+            "description": "<p>Service provider id should be unique id (get service provider id).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "sub_category_id",
+            "description": "<p>Sub category id should be unique id (get sub category id).</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/getsubcategoryservices"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n    {\n   \"status\": 1,\n   \"message\": \"success\",\n   \"service\": {\n       \"id\": 1,\n       \"full_name\": \"anil chauhan\",\n       \"profile_pic\": \"\",\n       \"about\": \"\",\n       \"rating\": 4.5,\n       \"reviews\": 2,\n       \"services\": [\n           {\n               \"id\": 1,\n               \"name\": \"tastdft\",\n               \"amount\": \"1110.000\",\n               \"description\": {\n                   \"0\": \"test by developer\",\n                   \"1\": \"test by developer\",\n                   \"2\": \"test by developer\"\n               },\n               \"addons\": [\n                   {\n                       \"id\": 1,\n                       \"name\": \"test1\",\n                       \"description\": \"asdfsad\",\n                       \"amount\": \"20.000\"\n                   }\n               ]\n           },\n           {\n               \"id\": 5,\n               \"name\": \"tastdft\",\n               \"amount\": \"1110.000\",\n               \"description\": {},\n               \"addons\": []\n           }\n       ]\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/ServiceprovidersControllerCopy.php",
+    "groupTitle": "Service_Providers"
+  },
+  {
+    "type": "post",
+    "url": "getsubcategoryservices",
+    "title": "Sub category wise get services",
+    "name": "getsubcategoryservices",
+    "version": "1.0.0",
+    "group": "Service_Providers",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users should be unique id (login user id).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "service_provider_id",
+            "description": "<p>Service provider id should be unique id (get service provider id).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "sub_category_id",
+            "description": "<p>Sub category id should be unique id (get sub category id).</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/getsubcategoryservices"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n    {\n   \"status\": 1,\n   \"message\": \"success\",\n   \"service\": {\n       \"id\": 1,\n       \"full_name\": \"anil chauhan\",\n       \"profile_pic\": \"\",\n       \"about\": \"\",\n       \"rating\": 4.5,\n       \"reviews\": 2,\n       \"services\": [\n           {\n               \"id\": 1,\n               \"name\": \"tastdft\",\n               \"amount\": \"1110.000\",\n               \"description\": {\n                   \"0\": \"test by developer\",\n                   \"1\": \"test by developer\",\n                   \"2\": \"test by developer\"\n               },\n               \"addons\": [\n                   {\n                       \"id\": 1,\n                       \"name\": \"test1\",\n                       \"description\": \"asdfsad\",\n                       \"amount\": \"20.000\"\n                   }\n               ]\n           },\n           {\n               \"id\": 5,\n               \"name\": \"tastdft\",\n               \"amount\": \"1110.000\",\n               \"description\": {},\n               \"addons\": []\n           }\n       ]\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/ServiceprovidersController.php",
+    "groupTitle": "Service_Providers"
+  },
+  {
+    "type": "post",
+    "url": "serviceproviderdetails",
+    "title": "Service provider details",
+    "name": "serviceproviderdetails",
+    "version": "1.0.0",
+    "group": "Service_Providers",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users should be unique id (login user id).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "service_provider_id",
+            "description": "<p>Service provider id should be unique id (get service provider id).</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/serviceproviderdetails"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n    {\n   \"status\": 1,\n   \"message\": \"success\",\n   \"service\": {\n       \"id\": 1,\n       \"full_name\": \"anil chauhan\",\n       \"profile_pic\": \"\",\n       \"about\": \"\",\n       \"rating\": 4.5,\n       \"reviews\": 2,\n       \"services\": [\n           {\n               \"id\": 1,\n               \"name\": \"tastdft\",\n               \"amount\": \"1110.000\",\n               \"description\": {\n                   \"0\": \"test by developer\",\n                   \"1\": \"test by developer\",\n                   \"2\": \"test by developer\"\n               },\n               \"addons\": [\n                   {\n                       \"id\": 1,\n                       \"name\": \"test1\",\n                       \"description\": \"asdfsad\",\n                       \"amount\": \"20.000\"\n                   }\n               ]\n           },\n           {\n               \"id\": 5,\n               \"name\": \"tastdft\",\n               \"amount\": \"1110.000\",\n               \"description\": {},\n               \"addons\": []\n           }\n       ]\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/ServiceprovidersController.php",
+    "groupTitle": "Service_Providers"
+  },
+  {
+    "type": "post",
+    "url": "serviceproviderdetails",
+    "title": "Service provider details",
+    "name": "serviceproviderdetails",
+    "version": "1.0.0",
+    "group": "Service_Providers",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users should be unique id (login user id).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "service_provider_id",
+            "description": "<p>Service provider id should be unique id (get service provider id).</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/serviceproviderdetails"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n    {\n   \"status\": 1,\n   \"message\": \"success\",\n   \"service\": {\n       \"id\": 1,\n       \"full_name\": \"anil chauhan\",\n       \"profile_pic\": \"\",\n       \"about\": \"\",\n       \"rating\": 4.5,\n       \"reviews\": 2,\n       \"services\": [\n           {\n               \"id\": 1,\n               \"name\": \"tastdft\",\n               \"amount\": \"1110.000\",\n               \"description\": {\n                   \"0\": \"test by developer\",\n                   \"1\": \"test by developer\",\n                   \"2\": \"test by developer\"\n               },\n               \"addons\": [\n                   {\n                       \"id\": 1,\n                       \"name\": \"test1\",\n                       \"description\": \"asdfsad\",\n                       \"amount\": \"20.000\"\n                   }\n               ]\n           },\n           {\n               \"id\": 5,\n               \"name\": \"tastdft\",\n               \"amount\": \"1110.000\",\n               \"description\": {},\n               \"addons\": []\n           }\n       ]\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/ServiceprovidersControllerCopy.php",
+    "groupTitle": "Service_Providers"
+  },
+  {
+    "type": "get",
+    "url": "timeslotwithvehicleType",
+    "title": "Time Slot with Vihecles Type",
+    "name": "timeslotwithvehicleType",
+    "version": "1.0.0",
+    "group": "Service_Providers",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/timeslotwithvehicleType"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\": \"success\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/ServiceprovidersController.php",
+    "groupTitle": "Service_Providers"
+  },
+  {
+    "type": "get",
+    "url": "timeslotwithvehicleType",
+    "title": "Time Slot with Vihecles Type",
+    "name": "timeslotwithvehicleType",
+    "version": "1.0.0",
+    "group": "Service_Providers",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/timeslotwithvehicleType"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\": \"success\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/ServiceprovidersControllerCopy.php",
+    "groupTitle": "Service_Providers"
+  },
+  {
+    "type": "get",
+    "url": "serviceDetails",
+    "title": "Service details",
+    "name": "serviceDetails",
+    "version": "1.0.0",
+    "group": "Service",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "service_id",
+            "description": "<p>Service unique id..</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/serviceDetails"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\": \"success\",\n  \"service_details\":{\n \"id\": 2,\n \"name\": \"tastdft\",\n \"image\": null,\n \"amount\": \"1110.000\",\n \"time_duration\": \"30Hours\",\n \"category\": \"asd\",\n \"sub_category\": \"\",\n \"addons\": [],\n \"description\": []\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/ServiceprovidersControllerCopy.php",
+    "groupTitle": "Service"
+  },
+  {
+    "type": "get",
+    "url": "serviceDetails",
+    "title": "Service details",
+    "name": "serviceDetails",
+    "version": "1.0.0",
+    "group": "Service",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "service_id",
+            "description": "<p>Service unique id..</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/serviceDetails"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\": \"success\",\n  \"service_details\":{\n \"id\": 2,\n \"name\": \"tastdft\",\n \"image\": null,\n \"amount\": \"1110.000\",\n \"time_duration\": \"30Hours\",\n \"category\": \"asd\",\n \"sub_category\": \"\",\n \"addons\": [],\n \"description\": []\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/ServiceprovidersController.php",
+    "groupTitle": "Service"
+  },
+  {
+    "type": "post",
+    "url": "addresses",
+    "title": "User address List",
+    "name": "addresses",
+    "version": "1.0.0",
+    "group": "User_Address",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer Authorization token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/addresses"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\": \"success\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/UserController.php",
+    "groupTitle": "User_Address"
+  },
+  {
+    "type": "post",
+    "url": "addaddress",
+    "title": "Address adds",
+    "name": "addaddress",
+    "version": "1.0.0",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "address_type",
+            "description": "<p>address_type should be numberic value(0=home,1=office and 2=appartment).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "area",
+            "description": "<p>Area name is mondatry.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "block",
+            "description": "<p>block name is mondatry.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "street",
+            "description": "<p>street name is mondatry.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "building",
+            "description": "<p>Building name is mondatry for address type office.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "floor",
+            "description": "<p>floor name  is mondatry for address type office.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "house",
+            "description": "<p>House name is mondatry</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "appartment_number",
+            "description": "<p>Apratment number  is mondatry for address type appartment.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "country_code",
+            "description": "<p>Country code is mondatry.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "mobile_number",
+            "description": "<p>Mobile number is mondatry.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "address",
+            "description": "<p>Full address is optional (get vai google map).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "location_latitude",
+            "description": "<p>Latitude  is optional.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "location_longitude",
+            "description": "<p>Longitude is optional.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer autherization token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/addaddress"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\": \"success\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/VehicleController.php",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "changepassword",
+    "title": "User change password",
+    "name": "changepassword",
+    "version": "1.0.0",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "userid",
+            "description": "<p>Users unique user_id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "current_password",
+            "description": "<p>Users Existing password.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "new_password",
+            "description": "<p>Users new password.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer autherization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/changepassword"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\": \"Password has been changed successfully\",\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/ProfileController.php",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "checkEmailExist",
+    "title": "Check email exist",
+    "name": "checkEmailExist",
+    "version": "1.0.0",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Users unique email.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\": \"success\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/checkEmailExist"
+      }
+    ],
+    "filename": "app/Http/Controllers/Api/SignupController.php",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "forgotpassword",
+    "title": "User forgot pasword",
+    "name": "forgotpassword",
+    "version": "1.0.0",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email_or_mobile",
+            "description": "<p>Users unique email address or mobile number.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key (optional).</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/forgotpassword"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\":\"reset password link has been send registerd email address.\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/SignupController.php",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "guestuserlogin",
+    "title": "Guest user login",
+    "name": "guestuserlogin",
+    "version": "1.0.0",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "device_type",
+            "description": "<p>Users device type.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "device_token",
+            "description": "<p>Users device token .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "is_guest",
+            "description": "<p>guest id should be 1.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key (optional).</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/guestuserlogin"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"guest_id\":1,\n  \"full_name\": \"Anil Chauhan\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/SignupController.php",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "notificationonoff",
+    "title": "User Notification On Or Off",
+    "name": "notificationonoff",
+    "version": "1.0.0",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique user_id.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer autherization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/notificationonoff"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\": \"Notification on or off successfully\",\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/ProfileController.php",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "register",
+    "title": "User Registration",
+    "name": "register",
+    "version": "1.0.0",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Users unique email address.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "full_name",
+            "description": "<p>Users full name.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Users password.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "country_code",
+            "description": "<p>Country.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "mobile_number",
+            "description": "<p>User Mobile Number.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "user_type",
+            "description": "<p>user type should be mandatry (2 for users and 4 for technician).</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/register"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"id\":1,\n  \"full_name\": \"Anil Chauhan\",\n  \"email\": \"anil@o2onelabs.com\",\n  \"mobile_number\": \"9806189315\",\n  \"otp\": 1234,\n  \"user_type\": 1,\n  \"wallet_amount\": \"500.000\",\n  \"is_address\": 0\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/SignupController.php",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "resendOtp",
+    "title": "Resend Otp",
+    "name": "resendOtp",
+    "version": "1.0.0",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Users unique id.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/resendOtp"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\": \"success\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/SignupController.php",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "updateprofile",
+    "title": "User update profile",
+    "name": "updateprofile",
+    "version": "1.0.0",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>users unique user_id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>users full name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "email",
+            "description": "<p>users unique email address</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "profile_pic",
+            "description": "<p>users upload profile pic</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "country_code",
+            "description": "<p>users country code</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "mobile_number",
+            "description": "<p>users unique mobile number</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer autherization token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/updateprofile"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n    {\n   \"status\": 1,\n   \"message\": \"Your profile has beed updated successfully.\",\n   \"details\": {\n       \"id\": 11,\n       \"name\": \"Backend developer\",\n       \"email\": \"developer13@o2onelabsss.com\",\n       \"country_code\": \"+91\",\n       \"mobile_number\": \"90157023921\",\n       \"profile_pic\": \"abc.jpg\"\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/ProfileController.php",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "userlogin",
+    "title": "User Login(Normal Login and Social Signup && SignIN)",
+    "name": "userlogin",
+    "version": "1.0.0",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Users unique email address.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Users password.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "social_id",
+            "description": "<p>google id for or facebook login.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "device_type",
+            "description": "<p>Device Type.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "device_token",
+            "description": "<p>Device Token.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "country_code",
+            "description": "<p>Country.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "mobile_number",
+            "description": "<p>User Mobile Number.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "full_name",
+            "description": "<p>Users full name.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "user_type",
+            "description": "<p>user type should be mandatry (2 for users and 4 for technician).</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>Type for login 1=email password,2=mobile_number and password and 3= google_id,4=facebook_id.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/userlogin"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"id\":1,\n  \"full_name\": \"Anil Chauhan\",\n  \"email\": \"anil@o2onelabs.com\",\n  \"country_code\": \"+91\",\n  \"mobile_number\": \"9806189315\",\n  \"is_verified_mobile\": 1,\n  \"is_active\": 1,\n  \"is_address\": 0\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/SignupController.php",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "verifyotp",
+    "title": "OTP verification",
+    "name": "verifyotp",
+    "version": "1.0.0",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Users unique ID.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "otp",
+            "description": "<p>Users unique OTP.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/verifyotp"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"id\":1,\n  \"full_name\": \"Anil Chauhan\",\n  \"email\": \"anil@o2onelabs.com\",\n  \"mobile_number\": \"9806189315\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/SignupController.php",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "createvehicle",
+    "title": "Vehicle adds",
+    "name": "createvehicle",
+    "version": "1.0.0",
+    "group": "Vehicle",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "vehicle_type",
+            "description": "<p>vehicel unique id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "model_id",
+            "description": "<p>Vehicle model id .</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "brand_id",
+            "description": "<p>vehicle brand id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "registration_number",
+            "description": "<p>vehicle registration number.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer autherization token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/createvehicle"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\": \"success\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/VehicleController.php",
+    "groupTitle": "Vehicle"
+  },
+  {
+    "type": "post",
+    "url": "vehicleandtimeslot",
+    "title": "Vehicle with Time slot",
+    "name": "vehicleandtimeslot",
+    "version": "1.0.0",
+    "group": "Vehicle",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique id.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer autherization token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/vehicleandtimeslot"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\": \"success\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/VehicleController.php",
+    "groupTitle": "Vehicle"
+  },
+  {
+    "type": "post",
+    "url": "vehicletype",
+    "title": "Vehicle Type",
+    "name": "vehicletype",
+    "version": "1.0.0",
+    "group": "Vehicle",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/vehicletype"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n {\n    \"status\": 1,\n    \"message\": \"success\",\n    \"vehicle_type\": [\n        {\n            \"id\": 1,\n            \"name\": \"sports\",\n            \"image\": \"vehicle/1573631368-vehicle-carcare.png\",\n            \"vehicle_brand\": [\n                {\n                    \"id\": 1,\n                    \"vehicle_type_id\": 1,\n                    \"name\": \"test brand\",\n                    \"models\": [\n                        {\n                            \"id\": 1,\n                            \"vehicle_brand_id\": 1,\n                            \"name\": \"test1\"\n                        },\n                        {\n                            \"id\": 2,\n                            \"vehicle_brand_id\": 1,\n                            \"name\": \"test brand 2\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 2,\n                    \"vehicle_type_id\": 1,\n                    \"name\": \"test brand 1\",\n                    \"models\": [\n                        {\n                            \"id\": 3,\n                            \"vehicle_brand_id\": 2,\n                            \"name\": \"test brand 3\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 4,\n                    \"vehicle_type_id\": 1,\n                    \"name\": \"test brand 3\",\n                    \"models\": []\n                }\n            ],\n            \"manufacture_year\": [\n                {\n                    \"id\": 1,\n                    \"vehicle_type_id\": 1,\n                     \"date\": [\n                      {\n                          \"date\": 1984\n                      },\n                      {\n                          \"date\": 1985\n                      },\n                    ]\n\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"hundai\",\n            \"image\": \"vehicle/1573631381-vehicle-carcare.png\",\n            \"vehicle_brand\": [\n                {\n                    \"id\": 3,\n                    \"vehicle_type_id\": 2,\n                    \"name\": \"test brand 2\",\n                    \"models\": [\n                        {\n                            \"id\": 4,\n                            \"vehicle_brand_id\": 3,\n                            \"name\": \"model\"\n                        }\n                    ]\n                }\n            ],\n            \"manufacture_year\": [\n                {\n                    \"id\": 2,\n                    \"vehicle_type_id\": 2,\n                     \"date\": [\n                      {\n                          \"date\": 1984\n                      },\n                      {\n                          \"date\": 1985\n                      },\n                    ]\n\n                    }\n                }\n            ]\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/VehicleController.php",
+    "groupTitle": "Vehicle"
+  },
+  {
+    "type": "post",
+    "url": "addmoneytowallet",
+    "title": "Add money to User wallet",
+    "name": "addmoneytowallet",
+    "version": "1.0.0",
+    "group": "Wallet",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "//dd",
+            "description": "<p>($timeSlots-&gt;toArray());//dd($timeSlots-&gt;toArray());user_id  Users unique user_id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "wallet_suggestion_id",
+            "description": "<p>Wallet unique wallet_suggestion_id.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer autherization token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/addmoneytowallet"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "  HTTP/1.1 200 OK\n {\n \"status\": 1,\n \"message\": \"success\",\n \"walllet\": {\n     \"user_id\": \"1\",\n     \"transaction_amount\": 84,\n     \"closing_amount\": 410,\n     \"transaction_type\": \"0\",\n     \"description\": \"Added from knet\",\n     \"updated_at\": \"2019-10-22 14:46:19\",\n     \"created_at\": \"2019-10-22 14:46:19\",\n     \"id\": 6\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/WalletController.php",
+    "groupTitle": "Wallet"
+  },
+  {
+    "type": "get",
+    "url": "amountsuggestionforwallet/:user_id",
+    "title": "User Add money suggestion amount",
+    "name": "amountsuggestionforwallet",
+    "version": "1.0.0",
+    "group": "Wallet",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique user_id.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer autherization token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/amountsuggestionforwallet"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n   {\n   \"status\": 1,\n   \"message\": \"success\",\n   \"wallet_balance\": \"84.000\",\n   \"walllet_suggestion\": [\n       {\n           \"wallet_suggestion_id\": 1,\n           \"amount\": \"20.000\",\n           \"credit_amount\": \"1.000\"\n       },\n       {\n           \"wallet_suggestion_id\": 2,\n           \"amount\": \"30.000\",\n           \"credit_amount\": \"1.000\"\n       },\n       {\n           \"wallet_suggestion_id\": 3,\n           \"amount\": \"40.000\",\n           \"credit_amount\": \"1.000\"\n       }\n   ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/WalletController.php",
+    "groupTitle": "Wallet"
+  },
+  {
+    "type": "post",
+    "url": "wallethistory",
+    "title": "Wallet History",
+    "name": "wallethistory",
+    "version": "1.0.0",
+    "group": "Wallet",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Users unique user_id.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Maak-Auth",
+            "description": "<p>Maak auth key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Maak Bearer autherization token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-localization",
+            "description": "<p>language like en,ar key.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"X-Maak-Auth\": \"MAAK\"\n  \"X-localization\": \"en\"\n  \"Authorization\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFiNDM1OGYxZjVkOWYzNTAzYmYxOTQ2OGUyZjRiNDA5Yjk1NTQ0OGE3OGZkNTAyZmYyMGU0MDM0NGNjZjc2OWUwMmRiOTcwMjE4NTU5MGJmIn0.eyJhdWQiOiI0IiwianRpIjoiYWI0MzU4ZjFmNWQ5ZjM1MDNiZjE5NDY4ZTJmNGI0MDliOTU1NDQ4YTc4ZmQ1MDJmZjIwZTQwMzQ0Y2NmNzY5ZTAyZGI5NzAyMTg1NTkwYmYiLCJpYXQiOjE1NjUxMTI0NjgsIm5iZiI6MTU2NTExMjQ2OCwiZXhwIjoxNTY2NDA4NDY4LCJzdWIiOiIzOCIsInNjb3BlcyI6W119.KfMt0mlXNZzVf7Ibio3qbONhlgY0oij7j_TAY7YJ8ercWYnBWN9rCR3QSQ96DE3tWIvkMIg_b5JzkICl_3JBgWrzSg73CakOxhw078f5NpGCZjFDM9o9f60tspLDQ1b1wOKNA6Iac_Yp6kADajFyasuMH6BbSERbrFICLG7f-uFEYcUwBrCc1dou-jWs0dBNF52XHYbAqGE4PRYJLjmB-vw0PIfWjouGVJrbMyCiulPOZZ154q4wJwCvCPIHBjGJvXY5grKGpWlYoRIdCFsb2rYfKa45b_45W_drJeN-P89BBUu0NAlKWf2P-QgpKq_XOeLws2zMfR6xuZddErpV83Y7jNwF-jvqaVnjISnqTxwt6YFyBSEsg8NuUNeMLiutDTADs_Fe9NkssOOm-zLlKZgzYRB8h5QdZTxue79Q6Egb2tM2oafX7i3oK2YfxuMG9XBJfoBHqaHB9ANRrkE3AHpsPgTgjB0fCsGbAe6FkgFi7m5z8XirZ7Jzv0qJGKMJbgzByC5iYRy6IwZW3qUTbO6hIkskf4yRDfnBatkyU99dVRP7T0tYmm_TtsgJaLcWUquJk6q2szaBdsmPruM5iFHGkbo6kobTKPBUMwpGewomcMUUQ1_OC6VfUI38dn-W2paYpyOt36xtR6DkEoXTWghzmC2v0zOWQztkAE0jkdI\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "sampleRequest": [
+      {
+        "url": "http://dev.maak.live/api/wallethistory"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\":1,\n  \"message\": \"success\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/Api/WalletController.php",
+    "groupTitle": "Wallet"
+  }
+] });

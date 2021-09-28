@@ -1,0 +1,729 @@
+@extends('app')
+
+@section('content')
+
+<style>
+.removecountry{
+   visibility: hidden;
+   display: none;
+ }
+        .form-control countrycode, .form-control email, .form-control mobile_no ,.form-control
+        {
+          background-color: transparent!important;
+        }
+        </style>
+        <style>
+        .emailerror{
+          color: #B94A48 !important;
+          font-size: 13px !important;
+          margin: -14px 0px 10px 3px !important;
+        }
+        .mobileerror{
+          color: #B94A48 !important;
+          font-size: 13px !important;
+          margin: -14px 0px 10px 3px !important;
+        }
+        .phoneerror{
+          color: #B94A48 !important;
+          font-size: 13px !important;
+          margin: -14px 0px 10px 3px !important;
+        }
+        .hideerror{
+          display: none;
+        }
+        .showerror{
+          display: block;
+        }
+        #addrow
+        {
+
+          padding: 10px 30px;
+          color: #fff;
+          width: 50px;
+          margin-top: 24px;
+          /* float: right; */
+          /* margin-right: 100px; */
+          /* margin-top: -60px; */
+
+        }
+        .abc input{
+
+        margin-top: 5px;
+        }
+
+
+        .abc
+        {
+        width: 53%;
+        }
+
+        .second input{
+          width: 92%;
+          margin-left: 40px!important;
+        }
+        .ibtnDel
+        {
+          padding: 8px 27px;
+          margin-left: 35px;
+        }
+
+        </style>
+<!-- Content Header (Page header) -->
+<div class="page-header">
+    <!-- <h3 class="page-title">Service Provider  </h3> -->
+    <nav aria-label="breadcrumb">
+        {{-- <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Forms</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+        </ol> --}}
+    </nav>
+</div>
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+            <h3 class="page-title">Service Provider  </h3>
+
+                    @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-block">
+                      <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>{{ $message }}</strong>
+                    </div>
+                    @endif
+                {{-- <h4 class="card-title">Create</h4> --}}
+                <form class="forms-sample" id="formdata" action="{{route('sp.serviceproviderupdated',$serviceprovider->id)}}" data-validate-parsley =" " method="post"
+                    enctype="multipart/form-data" autocomplete="off">
+                    @csrf
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Name </label>
+                                <input type="text" maxlength="50" class="form-control" name="full_name_en" placeholder="Name" value="@if($serviceprovider->full_name_en){{ $serviceprovider->full_name_en }}@endif"
+                                    required=" ">
+                            </div>
+                            @if ($errors->has('full_name_en'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('full_name_en') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="arabic_label" style="float:right;">الاسم</label>
+                                <input type="text" style="text-align:right;" maxlength="50" class="form-control full_name_ar"
+                                    name="full_name_ar" placeholder="الاسم" required=" " value="@if($serviceprovider->full_name_ar){{ $serviceprovider->full_name_ar }}@endif" >
+                            </div>
+                            @if ($errors->has('full_name_ar'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('full_name_ar') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="arabic_label" style="float:left;">Email</label>
+                              <input type="email" style="text-align:left;" maxlength="50" class="form-control email emailaddress"
+                                  name="email" placeholder="Email" required=" " data-parsley-type="email" data-id="{{ $serviceprovider->id }}" data-id1="1" value="@if($serviceprovider->email){{ $serviceprovider->email }}@endif">
+                          </div>
+                          <span class="emailerror" role="alert"></span>
+                          @if ($errors->has('email'))
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $errors->first('email') }}</strong>
+                          </span>
+                          @endif
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="arabic_label" style="float:left;">Secondary Email</label>
+                            <input type="email" style="text-align:left;" class="form-control email emailaddress"
+                            id="secondary_email"  name="secondary_email" placeholder="Secondary Email" required=" " data-parsley-type="email" data-id="{{ $serviceprovider->id }}"  value="@if($serviceprovider->secondary_email){{ $serviceprovider->secondary_email }}@endif">
+                        </div>
+                        <span class="secondary_email_error" role="alert"></span>
+                        @if ($errors->has('secondary_email'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('secondary_email') }}</strong>
+                        </span>
+                        @endif
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Phone No.</label>
+                            <input type="tel" id="desc_en" data-parsley-minlength="8" maxlength="15" class="form-control phoneaddress" name="phone_number" placeholder=" Phone No. "  data-id="{{ $serviceprovider->id }}" data-id1="3" data-parsley-type="number" value="{{$serviceprovider->phone_number}}" required>
+                        </div>
+                        <span class="phoneerror" role="alert"></span>
+                        @if ($errors->has('phone_number'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('phone_number') }}</strong>
+                        </span>
+                        @endif
+                      </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Incharge name</label>
+                                    <input type="text" id="desc_en" maxlength="150" class="form-control" name="incharge_name" placeholder="Incharge name " required="" value="{{$serviceprovider->person_incharge}}">
+                                </div>
+                                @if ($errors->has('incharge_name'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('incharge_name') }}</strong>
+                                </span>
+                                @endif
+                                </div>
+                        <div class="col-md-2">
+                                <div class="form-group">
+                                        <label class="arabic_label">Country Code</label>
+                                        <select class="browser-default custom-select form-control" name="countrycode" >
+                                            <option value="">Select</option>
+                                            @foreach($kuwait as $k)
+                                            <option value="{{$k->phonecode}}" @if($serviceprovider->country_code==$k->phonecode){{'selected'}} @endif> +{{$k->phonecode}} </option>
+                                            @endforeach
+                                              </select>
+                                </div>
+                                @if ($errors->has('countrycode'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('countrycode') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="arabic_label" style="float:left;">Mobile.no</label>
+                            <input type="text" style="text-align:left;" data-parsley-minlength="8" maxlength="12" class="form-control mobile_no mobileaddress"  name="mobile_no" placeholder="Mobile.no" data-parsley-type="number" data-id="{{ $serviceprovider->id }}" data-id1="2" value="{{$serviceprovider->mobile_number}}" >
+                            </div>
+                            <span class="mobileerror" role="alert"></span>
+                            @if ($errors->has('mobile_no'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('mobile_no') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                    </div>
+                    {{-- Existing coutry and city with areas --}}
+
+                    <?php
+
+                    if(!empty($serviceprovider->cityareas))
+                    {
+                      $coyuntervalue = count($serviceprovider->cityareas);
+                    }else{
+                      $coyuntervalue =0;
+                    }
+                    if($coyuntervalue == 0){
+                          $coyuntervalue = 0;
+                    }elseif($coyuntervalue != 0){
+
+                      $coyuntervalue = $coyuntervalue;
+                    }
+
+                    ?>
+                    @if(!empty($serviceprovider->cityareas) && $serviceprovider->cityareas !=null)
+                      @foreach ($serviceprovider->cityareas as $key => $spcountiesdata)
+
+                          <div class="row" id="{{ $spcountiesdata->id }}">
+                        
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label  class="arabic_label" style="float:left;">City</label>
+                                    <select id="city_{{ $key }}" class="browser-default custom-select form-control city" name="city_{{ $key }}[]">
+                                        <option disabled selected>-----Select City-----</option>
+                                        @foreach($cities as $city)
+                                          <option value="{{$city->id}}" @if($city->id ==$spcountiesdata['city_id']){{ "selected" }}@endif> {{$city->name_en}} </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label>Area</label>
+                                    <?php
+                                    foreach ($spcountiesdata->coutrycitywisearea as $cityarea) {
+                                        $cate[]= $cityarea['area_id'];
+                                    }
+                                    ?>
+                                    <select id="area_{{ $key }}" class="browser-default custom-select form-control selectpicker area" name="area_{{ $key }}[]"  multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true" title="Please Select Areas" data-required="true" data-parsley-required-message="Area Name(s) is required" required>
+                                            {{-- <option disabled selected>-----Select Area-----</option> --}}
+
+                                            @foreach($areas[$key] as $keys=>$areavalue)
+                                                    <option value="{{$areavalue['id']}}" @if(in_array($areavalue['id'],$cate)){{'selected'}} @endif>{{$areavalue->name_en}} </option>
+                                                    @endforeach
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-md-1" style="margin-left: -20px;">
+                              <a href="javascript:void(0);" class="remove_button deletecountryareadata" data-id="{{ $spcountiesdata->id }}" data-id1="{{ $serviceprovider->id }}" data-id2={{$key}}><span class="btn btn-gradient-danger sm" style="padding: 8px;margin-top: 24px;"><i class="fa fa-minus-circle" aria-hidden="true"></i></span></a>
+                              <span class="btn btn-gradient-primary sm add_onssubs" style="padding: 8px;margin-top: -53px;margin-left: 36px;"><i class="fa fa-plus-circle" aria-hidden="true"></i></span>
+                            </div>
+
+                          </div>
+                      @endforeach
+                    @endif
+
+                    {{-- Code end existing  --}}
+                    <?php if($coyuntervalue == 0){ ?>
+                      <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Country</label>
+
+                                <select id="country_{{ $coyuntervalue }}" class="browser-default custom-select form-control country" name="country_{{ $coyuntervalue }}[]" required>
+                                        <option disabled selected>-----Select Country-----</option>
+                                        @foreach($kuwait as $k)
+                                            <option value="{{$k->id}}" > {{$k->name}} </option>
+                                        @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label  class="arabic_label" style="float:left;">City</label>
+                                <select id="city_{{ $coyuntervalue }}" class="browser-default custom-select form-control city" name="city_{{ $coyuntervalue }}[]" required>
+                                    <option disabled selected>-----Select City-----</option>
+                                    {{-- @foreach($cities as $city)
+                                                <option value="{{$city->id}}" > {{$city->name_en}} </option>
+                                                @endforeach --}}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Area</label>
+                                <select id="area_{{ $coyuntervalue }}" class="browser-default custom-select form-control selectpicker area" name="area_{{ $coyuntervalue }}[]" >
+                                        {{-- <option disabled selected>-----Select Area-----</option> --}}
+                                        {{-- @foreach($kuwait as $k)
+                                                <option value="{{$k->id}}" > {{$k->name}} </option>
+                                                @endforeach --}}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                          <button type="button" class="btn btn-lg btn-block btn-gradient-danger add_ons" id="addrow"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+                        </div>
+                      </div>
+                    <?php } ?>
+
+{{-- This code is used to add multiple city and area --}}
+
+<div class="field_wrapper"></div>
+
+<div class="card field_wrap"></div>
+
+
+
+{{-- End city and area --}}
+
+                            <div class="row">
+
+
+
+                                            <div class="col-md-12">
+                                                    <div class="form-group">
+                                                       <label class="arabic_label" style="float:left;">Address</label>
+                                                       <textarea class="form-control"  style="text-align:left;" name="address" placeholder="Address" required>{{$serviceprovider->address}}</textarea>
+
+                                                   </div>
+                                                   @if ($errors->has('address'))
+                                                   <span class="invalid-feedback" role="alert">
+                                                       <strong>{{ $errors->first('address') }}</strong>
+                                                   </span>
+                                                   @endif
+                                               </div>
+                                    </div> 
+                                    <div class="row">
+                                                    <div class="col-md-6">
+                                                      <div class="form-group">
+                                                        <label>Multiple category</label>
+                                                        <select class="js-example-basic-multiple" multiple="multiple" style="width:100%" name="categories[]" id="my_multiselect" required="">
+                                                          @foreach ($category as $key => $value)
+                                                            <option value="{{$value['id']}}" @if(in_array($value['id'],$spCategories)) {{ "selected" }}@endif>{{ $value['name_en'] }}ss</option>
+                                                          @endforeach
+
+                                                        </select>
+                                                      </div>
+                                                  </div>
+
+                                                  <div class="col-md-6">
+                                                    <div class="form-group">
+                                                      <label>Multiple sub category</label>
+
+                                                      <select class="js-example-basic-multiple" multiple="multiple" style="width:100%" name="subcategories[]" id="subcategory">
+                    {{--  @foreach ($subcategory as $key1 => $value1)
+                        <option value="{{$value1['id']}}" @if(!empty($serviceprovider['subcategory'][$key1]['sub_category_id']) && $serviceprovider['subcategory'][$key1]['sub_category_id'] ==$value1['id']){{ "selected" }}@endif>{{ $value1['name_en'] }}</option>
+                      @endforeach --}}
+                       @foreach ($subcategory as $key1 => $value1)
+                        <option value="{{$value1['id']}}" @if(in_array($value1['id'],$selectedSubcategory)){{ "selected" }}@endif>{{ $value1['name_en'] }}</option>
+                      @endforeach
+
+                                                      </select>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Bank name</label>
+                                                        <input type="text" maxlength="150" class="form-control" name="bank_name" placeholder="Bank's name " value="{{ $serviceprovider->bank_name }}">
+                                                    </div>
+                                                    @if ($errors->has('bank_name'))
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $errors->first('bank_name') }}</strong>
+                                                    </span>
+                                                    @endif
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>IBAN</label>
+                                                        <input type="text"  maxlength="150" class="form-control" name="iban" placeholder=" IBAN " data-parsley-type="alphanum" value="{{ $serviceprovider->iban }}">
+                                                    </div>
+                                                    @if ($errors->has('iban'))
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $errors->first('iban') }}</strong>
+                                                    </span>
+                                                    @endif
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row">
+                                              <div class="col-md-6">
+                                                  <div class="form-group">
+                                                      <label>Supplier Code</label>
+                                                      <input type="text" id="desc_en" maxlength="150" class="form-control" name="supplier_code" placeholder=" Supplier Code " data-parsley-type="alphanum" required value="{{ $serviceprovider->supplier_code }}" >
+                                                  </div>
+                                                  @if ($errors->has('supplier_code'))
+                                                  <span class="invalid-feedback" role="alert">
+                                                      <strong>{{ $errors->first('supplier_code') }}</strong>
+                                                  </span>
+                                                  @endif
+                                              </div>       
+                                            </div>
+
+
+                                            <h5>Commission Fees</h5>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="arabic_label" style="float:left;">Fixed Price</label>
+                                                        <input type="text" style="text-align:left;" min="0" class="form-control monthly_fee" name="fixed_price" id="fixed_price" placeholder="Fixed Price" data-parsley-type="number" value="{{ $serviceprovider->fixed_price }}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="arabic_label" style="float:left;">Percentage (In %)</label>
+                                                        <input type="text" style="text-align:left;" min="0" max="100" class="form-control monthly_fee" name="maak_percentage" id="maak_percentage" placeholder="Percentage" data-parsley-type="number" value="{{ $serviceprovider->maak_percentage }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="arabic_label" style="float:left;">Monthly Fees</label>
+                                                        <input type="text" style="text-align:left;" min="0" class="form-control monthly_fee" name="monthly_fee" id="monthly_fee" placeholder="Monthly Fees" data-parsley-type="number" value="{{ $serviceprovider->monthly_fees }}">
+                                                    </div>
+                                                    @if ($errors->has('monthly_fee'))
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $errors->first('monthly_fee') }}</strong>
+                                                    </span>
+                                                    @endif
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                            <label class="arabic_label" style="float:left;">Setup Fees</label>
+                                                            <input type="text" style="text-align:left;" min="0" class="form-control monthly_fee" name="setup_fee" id="setup_fee" placeholder="Setup Fees" data-parsley-type="number" value="{{ $serviceprovider->setup_fee }}">
+                                                    </div>
+                                                    @if ($errors->has('setup_fee'))
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $errors->first('setup_fee') }}</strong>
+                                                    </span>
+                                                    @endif
+                                                </div>
+                                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+
+                                    <input type="button" value="Submit" class="btn btn-gradient-danger mr-2">
+                                    <a href="javascript:history.go(-1)" class="btn btn-gradient-danger ">Back</a>
+                                </div>
+                            </div>
+
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+@section('scripts')
+<script src="{{asset('js/select2.js')}}"></script>
+<script src="{{asset('js/bootstrap-select.min.js')}}"></script>
+<link rel="stylesheet" href="{{asset('css/bootstrap-select.min.css')}}" />
+<script type="text/javascript">
+
+// form submit
+$("input[value=Submit]").click(function(event) {
+    if ($("#formdata").parsley().validate()) {
+        $(this).attr("disabled", true);
+        $('#formdata').submit();
+    }
+});
+</script>
+
+
+@if($serviceprovider->area)
+<script>
+  $(document).ready(function(){
+    var tttt= "<option value="{{$serviceprovider->area}}">test</option>";
+
+    $('#area').html(tttt);
+  });
+
+</script>
+@endif
+
+{{-- <script>
+        $(document).ready(function(){
+          $('#city').change(function(){
+              var status = $(this).val();
+              $.get('{{route("get-area-bystatus")}}/'+status,function(data){
+                if(data.status=="success"){
+                  $('#area').html(data.option);
+                }
+              }).fail(function(){
+                $('#area').html('');
+              });
+          });
+        });
+</script> --}}
+
+<script>
+    $(document).ready(function(){
+
+      $('#my_multiselect').on('change',function() {
+      let categoryID = $(this).val();
+      $.ajax({
+        url: "{{route('getSubcategorydata')}}",
+        method: 'POST',
+        data:{categoryID: categoryID},
+        type:"json",
+        success: function(response) {
+           if(response.status==1){
+            $('#subcategory').html(response.option);
+           }
+        },
+    });
+    });
+    });
+
+
+    $('body').on('change', '.country',$(this), function() {
+      var countryid = $(this).val();
+      var contdata = $(this).attr("id");
+      $.get('{{route("get-getcities")}}/'+countryid,function(data){
+        if(data.status=="success"){
+          var strArray = contdata.split("_");
+          $("#city_"+strArray[1]).html(data.option);
+            $("#city_"+strArray[1]).prop('required',true);
+            $("#area_"+strArray[1]).prop('required',true);
+        }
+    }).fail(function(){
+      $("#city_"+strArray[1]).html('');
+      $("#city_"+strArray[1]).removeAttr('required');
+      $("#area_"+strArray[1]).removeAttr('required');
+    });
+  });
+
+  $('body').on('change', '.city',$(this), function() {
+    var status = $(this).val();
+    var citydata = $(this).attr("id");
+    $.get('{{route("get-area-bystatus")}}/'+status,function(data){
+      if(data.status=="success"){
+        var strArray1 = citydata.split("_");
+        $("#area_"+strArray1[1]).html(data.option).selectpicker('refresh');
+        $("#area_"+strArray1[1]).prop('required',true);
+      }
+    }).fail(function(){
+      $("#area_"+strArray1[1]).html('');
+      $("#area_"+strArray1[1]).removeAttr('required');
+    });
+});
+
+</script>
+<script>
+  $(document).ready(function(){
+    var y = {{ $coyuntervalue+1 }}; //Initial field counter is 1
+      var maximumField = 10; //Input fields increment limitation
+      var addButto = $('.add_ons'); //Add button selector
+      var wrap = $('.field_wrap'); //Input field wrapper
+      $(document).on('click','.add_ons,.add_onssubs',function(){
+          //Check maximum number of input fields
+          if(y < maximumField){
+            var fieldHTM = '<div class="row" id='+y+'><div class="col-md-6"><div class="form-group"><label  class="arabic_label" style="float:left;">City</label><select class="browser-default custom-select form-control city" id="city_'+y+'" name="city_'+y+'[]" required=""><option>-----Select City-----</option>@foreach($cities as $city)<option value="{{$city->id}}" > {{$city->name_en}} </option>@endforeach</select></div></div><div class="col-md-5"><div class="form-group"><label>Area</label><select class="browser-default  custom-select form-control  area" name="area_'+y+'[]" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true" title="Please Select Areas" data-required="true" data-parsley-required-message="Area Name(s) is required" required="" id="area_'+y+'"></select></div></div><a href="javascript:void(0);" class="remove_button"><span class="btn btn-gradient-danger sm" style="padding: 8px;margin-top: 24px;"><i class="fa fa-minus-circle" aria-hidden="true"></i></span></a><span class="btn btn-gradient-primary sm add_onssubs" style="padding: 8px; margin-top: 24px; margin-bottom:65px; margin-left: 8px;"><i class="fa fa-plus-circle" aria-hidden="true"></i></span></div>';
+            $(wrap).append(fieldHTM); //Add field html
+            y++; //Increment field counter
+            $('.area').selectpicker('refresh');
+          }
+      });
+      //Once remove button is clicked
+      $(wrap).on('click', '.remove_button', function(e){
+          e.preventDefault();
+          e.preventDefault(); $(this).parent('div').remove(); y--;
+      });
+  });
+
+  </script>
+  <script>
+
+    $(document).on("click",".deletecountryareadata",function(){
+      let countryid = $(this).data('id');
+      let user_id = $(this).data('id1');
+      let removkeyname = $(this).data('id2');
+      swal({
+        title: 'Are you sure?',
+        text: "You want to delete this!",
+        //text: "You want to delete the Category",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3f51b5',
+        cancelButtonColor: '#ff4081',
+        confirmButtonText: 'Great ',
+        buttons: {
+          cancel: {
+            text: "Cancel",
+            value: null,
+            visible: true,
+            className: "btn btn-warning",
+            closeModal: true,
+          },
+          confirm: {
+            text: "OK",
+            value: true,
+            visible: true,
+            className: "btn btn-info",
+            closeModal: true,
+          }
+        }
+
+      }).then(function(isConfirm){
+        if(isConfirm){
+          $.ajax({
+            url: "{{route('deletecountry')}}",
+            method: 'POST',
+            data:{countryid:countryid,user_id:user_id},
+            type:"json",
+            success: function(response) {
+               if(response.status == '1'){
+                 $("#"+countryid).remove();
+                 // $("#city_"+removkeyname).removeAttr('required');
+                 // $("#country_"+removkeyname).removeAttr('required');
+                 // $("#area_"+removkeyname).removeAttr('required');
+                 //$("#"+countryid).addClass('removecountry');
+                 swal("Success!", response.message, "success");
+               }else if(response.status == '0'){
+                 swal("Error!", response.message, "error");
+               }
+            },
+            error:function(){
+              swal({
+                text: 'Something went wrong',
+                button: {
+                  text: "OK",
+                  value: true,
+                  visible: true,
+                  className: "btn btn-primary"
+                }
+              })
+            }
+        });
+        }
+      })
+    });
+  </script>
+
+ <script>
+ $(document).ready(function(){
+   $(".emailaddress").keyup(function(){
+       let email = $(this).val();
+       let userid = $(this).data('id');
+       let type = $(this).data('id1');
+       $.ajax({
+         url: "{{route('checkexists')}}",
+         method: 'POST',
+         data:{userid:userid,email:email,type:type},
+         type:"json",
+         success: function(response) {
+            if(response.status == '1'){
+              if(type ==1){
+                 $(".emailerror").addClass('showerror');
+                 $(".emailerror").text(response.message);
+              }
+            }else if(response.status == '0'){
+              $(".emailerror").addClass('hideerror');
+              $(".emailerror").text('');
+            }
+         }
+     });
+ });
+
+ $(".mobileaddress").keyup(function(){
+     let mobile_number = $(this).val();
+     let userid = $(this).data('id');
+     let type = $(this).data('id1');
+     $.ajax({
+       url: "{{route('checkexists')}}",
+       method: 'POST',
+       data:{userid:userid,mobile_number:mobile_number,type:type},
+       type:"json",
+       success: function(response) {
+          if(response.status == '1'){
+            if(type ==2){
+               $(".mobileerror").addClass('showerror');
+               $(".mobileerror").text(response.message);
+            }
+          }else if(response.status == '0'){
+            $(".mobileerror").addClass('hideerror');
+            $(".mobileerror").text('');
+          }
+       }
+   });
+ });
+
+ $(".phoneaddress").keyup(function(){
+     let phone_number = $(this).val();
+     let userid = $(this).data('id');
+     let type = $(this).data('id1');
+     $.ajax({
+       url: "{{route('checkexists')}}",
+       method: 'POST',
+       data:{userid:userid,phone_number:phone_number,type:type},
+       type:"json",
+       success: function(response) {
+          if(response.status == '1'){
+            if(type ==3){
+               $(".phoneerror").addClass('showerror');
+               $(".phoneerror").text(response.message);
+            }
+          }else if(response.status == '0'){
+            $(".phoneerror").addClass('hideerror');
+            $(".phoneerror").text('');
+          }
+       }
+   });
+ });
+ });
+ </script>
+@endsection
